@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "M PLUS 1";
+    color: #171a20;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* background-color: red; */
+    padding: 5px 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+}
+
+.desktop {
+    display: none;
+}
+
+@media (min-width:914px) {
+    .desktop {
+        display: initial;
+    }
+}
+
+a.logo {
+    margin-top: 1vh;
+    height: 12px;
+    width: 100px;
+    color: inherit;
+}
+
+header a {
+    color: inherit;
+    font-weight:bold;
+    font-size: 12px;
+}
+
+header nav.center {
+    /* background-color: aqua; */
+    text-align: center;
+}
+
+header nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+header nav.right {
+    text-align: right;
+}
+
+section {
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+}
+
+section .Content {
+    width: 100%;
+    height: 100vh;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    text-align: center;
+    display: grid;
+    grid-template-rows:min-content auto min-content;
+}
+
+section h1{
+    font-size: 2rem;
+}
+
+section p{
+    text-align:center;
+}
+section a{
+    color: inherit;
+    font-size: 12px;
+}
+section p{
+    font-size: 12px;
+}
+section .button  a{
+    display: block;
+    background-color: #eee;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 8px 50px;
+    font-size: 12px;
+    width:80%;
+    margin: auto;
+    font-weight: 500;
+}
+section .button a:first-child{
+    background-color:#444;
+    color: white;
+}
+section .button{
+    width: 100%;
+    background-color:t;
+    display: grid;
+    row-gap:20px;
+}
+
+@media (min-width:914px) {
+    section .button{
+        max-width: 640px;
+        margin: 0 auto;
+        grid-template-columns: 0.7fr 0.7fr;
+        column-gap:1px;
+    }
+    section .button a{
+        font-weight: bold;
+        font-size: 10px;
+        padding: 11px ;
+    }
+}
+
+aside{
+    transition: right 2.5s;
+    position:fixed;
+    right: -600px;
+    width: 350px;
+    background-color: white;
+    padding: 80px 34px;
+    z-index: 4;
+    height: 100vh;
+}
+
+aside > a{
+    text-align: left;
+    display: block;
+    font-size: 14px;
+    font-weight:600;
+    color: #424343;
+    padding:5px 5px;
+    text-decoration: none;
+}
+
+
+aside .close{
+    cursor:pointer;
+    font-size: 24px;
+    border:0;
+    background-color: transparent;
+    position: absolute;
+    top:5px;
+    font-weight: 100;
+    right:20px;
+    padding: 10px;
+}
+
+
+.backdrop{
+    display: none;
+    position: fixed;
+    inset:0;
+    background-color:rgba(0,0,0,0.35);
+    backdrop-filter: blur(5px);
+}
+
+
+aside.active{
+    right: 0;
+}
+
+.backdrop.active{
+    display: block;
+}
